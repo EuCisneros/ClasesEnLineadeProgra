@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.PanelBarraTitulo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnProfesores = new System.Windows.Forms.Button();
-            this.btnStudents = new System.Windows.Forms.Button();
-            this.btnMatricula = new System.Windows.Forms.Button();
+            this.btnAlquiler = new System.Windows.Forms.Button();
+            this.btnPeliculas = new System.Windows.Forms.Button();
+            this.btnCliente = new System.Windows.Forms.Button();
             this.PanelContenedorPrincipal = new System.Windows.Forms.Panel();
             this.PanelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -51,8 +51,18 @@
             this.PanelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.PanelBarraTitulo.Name = "PanelBarraTitulo";
-            this.PanelBarraTitulo.Size = new System.Drawing.Size(969, 62);
+            this.PanelBarraTitulo.Size = new System.Drawing.Size(1081, 62);
             this.PanelBarraTitulo.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(11, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(56, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -68,23 +78,13 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Alquiler de Películas";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(11, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.Goldenrod;
             this.panelMenu.Controls.Add(this.label2);
-            this.panelMenu.Controls.Add(this.btnProfesores);
-            this.panelMenu.Controls.Add(this.btnStudents);
-            this.panelMenu.Controls.Add(this.btnMatricula);
+            this.panelMenu.Controls.Add(this.btnAlquiler);
+            this.panelMenu.Controls.Add(this.btnPeliculas);
+            this.panelMenu.Controls.Add(this.btnCliente);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 62);
             this.panelMenu.Name = "panelMenu";
@@ -102,65 +102,68 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Alquiler";
             // 
-            // btnProfesores
+            // btnAlquiler
             // 
-            this.btnProfesores.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnProfesores.FlatAppearance.BorderSize = 0;
-            this.btnProfesores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.btnProfesores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.btnProfesores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfesores.Font = new System.Drawing.Font("Georgia", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfesores.ForeColor = System.Drawing.Color.Black;
-            this.btnProfesores.Image = ((System.Drawing.Image)(resources.GetObject("btnProfesores.Image")));
-            this.btnProfesores.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnProfesores.Location = new System.Drawing.Point(3, 143);
-            this.btnProfesores.Name = "btnProfesores";
-            this.btnProfesores.Size = new System.Drawing.Size(176, 42);
-            this.btnProfesores.TabIndex = 19;
-            this.btnProfesores.Text = "  Alquiler";
-            this.btnProfesores.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnProfesores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnProfesores.UseVisualStyleBackColor = true;
+            this.btnAlquiler.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnAlquiler.FlatAppearance.BorderSize = 0;
+            this.btnAlquiler.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.btnAlquiler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnAlquiler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlquiler.Font = new System.Drawing.Font("Georgia", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlquiler.ForeColor = System.Drawing.Color.Black;
+            this.btnAlquiler.Image = ((System.Drawing.Image)(resources.GetObject("btnAlquiler.Image")));
+            this.btnAlquiler.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnAlquiler.Location = new System.Drawing.Point(3, 143);
+            this.btnAlquiler.Name = "btnAlquiler";
+            this.btnAlquiler.Size = new System.Drawing.Size(176, 42);
+            this.btnAlquiler.TabIndex = 19;
+            this.btnAlquiler.Text = "  Alquiler";
+            this.btnAlquiler.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnAlquiler.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAlquiler.UseVisualStyleBackColor = true;
+            this.btnAlquiler.Click += new System.EventHandler(this.btnAlquiler_Click);
             // 
-            // btnStudents
+            // btnPeliculas
             // 
-            this.btnStudents.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnStudents.FlatAppearance.BorderSize = 0;
-            this.btnStudents.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.btnStudents.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.btnStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudents.Font = new System.Drawing.Font("Georgia", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStudents.ForeColor = System.Drawing.Color.Black;
-            this.btnStudents.Image = ((System.Drawing.Image)(resources.GetObject("btnStudents.Image")));
-            this.btnStudents.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnStudents.Location = new System.Drawing.Point(3, 95);
-            this.btnStudents.Name = "btnStudents";
-            this.btnStudents.Size = new System.Drawing.Size(176, 42);
-            this.btnStudents.TabIndex = 17;
-            this.btnStudents.Text = "  Películas";
-            this.btnStudents.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnStudents.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnStudents.UseVisualStyleBackColor = true;
+            this.btnPeliculas.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnPeliculas.FlatAppearance.BorderSize = 0;
+            this.btnPeliculas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.btnPeliculas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnPeliculas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPeliculas.Font = new System.Drawing.Font("Georgia", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPeliculas.ForeColor = System.Drawing.Color.Black;
+            this.btnPeliculas.Image = ((System.Drawing.Image)(resources.GetObject("btnPeliculas.Image")));
+            this.btnPeliculas.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnPeliculas.Location = new System.Drawing.Point(3, 95);
+            this.btnPeliculas.Name = "btnPeliculas";
+            this.btnPeliculas.Size = new System.Drawing.Size(176, 42);
+            this.btnPeliculas.TabIndex = 17;
+            this.btnPeliculas.Text = "  Películas";
+            this.btnPeliculas.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnPeliculas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPeliculas.UseVisualStyleBackColor = true;
+            this.btnPeliculas.Click += new System.EventHandler(this.btnPeliculas_Click);
             // 
-            // btnMatricula
+            // btnCliente
             // 
-            this.btnMatricula.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnMatricula.FlatAppearance.BorderSize = 0;
-            this.btnMatricula.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.btnMatricula.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.btnMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMatricula.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMatricula.ForeColor = System.Drawing.Color.Black;
-            this.btnMatricula.Image = ((System.Drawing.Image)(resources.GetObject("btnMatricula.Image")));
-            this.btnMatricula.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnMatricula.Location = new System.Drawing.Point(3, 47);
-            this.btnMatricula.Name = "btnMatricula";
-            this.btnMatricula.Size = new System.Drawing.Size(176, 42);
-            this.btnMatricula.TabIndex = 15;
-            this.btnMatricula.Text = "  Clientes";
-            this.btnMatricula.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnMatricula.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMatricula.UseVisualStyleBackColor = true;
+            this.btnCliente.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnCliente.FlatAppearance.BorderSize = 0;
+            this.btnCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.btnCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCliente.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCliente.ForeColor = System.Drawing.Color.Black;
+            this.btnCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnCliente.Image")));
+            this.btnCliente.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnCliente.Location = new System.Drawing.Point(3, 47);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(176, 42);
+            this.btnCliente.TabIndex = 15;
+            this.btnCliente.Text = "  Clientes";
+            this.btnCliente.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCliente.UseVisualStyleBackColor = true;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
             // 
             // PanelContenedorPrincipal
             // 
@@ -170,14 +173,14 @@
             this.PanelContenedorPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContenedorPrincipal.Location = new System.Drawing.Point(170, 62);
             this.PanelContenedorPrincipal.Name = "PanelContenedorPrincipal";
-            this.PanelContenedorPrincipal.Size = new System.Drawing.Size(799, 406);
+            this.PanelContenedorPrincipal.Size = new System.Drawing.Size(911, 406);
             this.PanelContenedorPrincipal.TabIndex = 8;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 468);
+            this.ClientSize = new System.Drawing.Size(1081, 468);
             this.Controls.Add(this.PanelContenedorPrincipal);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.PanelBarraTitulo);
@@ -200,9 +203,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnProfesores;
-        private System.Windows.Forms.Button btnStudents;
-        private System.Windows.Forms.Button btnMatricula;
+        private System.Windows.Forms.Button btnAlquiler;
+        private System.Windows.Forms.Button btnPeliculas;
+        private System.Windows.Forms.Button btnCliente;
         private System.Windows.Forms.Panel PanelContenedorPrincipal;
     }
 }
