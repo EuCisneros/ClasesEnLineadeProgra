@@ -47,7 +47,7 @@ namespace Segundo_Parcial
 
         private void btnPeliculas_Click(object sender, EventArgs e)
         {
-           
+           //
         }
 
         private void btnAlquiler_Click(object sender, EventArgs e)
