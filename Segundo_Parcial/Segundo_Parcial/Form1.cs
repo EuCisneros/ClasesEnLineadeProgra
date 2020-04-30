@@ -47,9 +47,7 @@ namespace Segundo_Parcial
 
         private void btnPeliculas_Click(object sender, EventArgs e)
         {
-            Pelicula fm = new Pelicula();
-            fm.FormClosed += new FormClosedEventHandler(MostrarFrmCineAlCerrarForms);
-            AbrirFormEnPanel(fm);
+           
         }
 
         private void btnAlquiler_Click(object sender, EventArgs e)
