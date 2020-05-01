@@ -28,18 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btncancelar = new System.Windows.Forms.Button();
-            this.grdBusquedaProductos = new System.Windows.Forms.DataGridView();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.presentacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdBusquedaPeliculas = new System.Windows.Forms.DataGridView();
+            this.peliculasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet_sistema_peliculas = new ClasedeProgramacion.DataSet_sistema_peliculas();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.lblbuscar = new System.Windows.Forms.Label();
             this.btnseleccionar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.grdBusquedaProductos)).BeginInit();
+            this.peliculas1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.peliculas1TableAdapter = new ClasedeProgramacion.DataSet_sistema_peliculasTableAdapters.peliculas1TableAdapter();
+            this.peliculas1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.idPeliculaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idAlquilerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sinopsisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.generoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duracionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.grdBusquedaPeliculas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peliculasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_sistema_peliculas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peliculas1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peliculas1BindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btncancelar
@@ -52,81 +63,39 @@
             this.btncancelar.Text = "CANCELAR";
             this.btncancelar.UseVisualStyleBackColor = true;
             // 
-            // grdBusquedaProductos
+            // grdBusquedaPeliculas
             // 
-            this.grdBusquedaProductos.AllowUserToAddRows = false;
-            this.grdBusquedaProductos.AllowUserToDeleteRows = false;
-            this.grdBusquedaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdBusquedaProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idProducto,
-            this.categoria,
-            this.codigo,
-            this.nombre,
-            this.marca,
-            this.presentacion});
-            this.grdBusquedaProductos.Location = new System.Drawing.Point(5, 52);
-            this.grdBusquedaProductos.Margin = new System.Windows.Forms.Padding(1);
-            this.grdBusquedaProductos.Name = "grdBusquedaProductos";
-            this.grdBusquedaProductos.ReadOnly = true;
-            this.grdBusquedaProductos.RowHeadersWidth = 102;
-            this.grdBusquedaProductos.RowTemplate.Height = 40;
-            this.grdBusquedaProductos.Size = new System.Drawing.Size(789, 346);
-            this.grdBusquedaProductos.TabIndex = 19;
+            this.grdBusquedaPeliculas.AllowUserToAddRows = false;
+            this.grdBusquedaPeliculas.AllowUserToDeleteRows = false;
+            this.grdBusquedaPeliculas.AutoGenerateColumns = false;
+            this.grdBusquedaPeliculas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdBusquedaPeliculas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idPeliculaDataGridViewTextBoxColumn,
+            this.idAlquilerDataGridViewTextBoxColumn,
+            this.descripcionDataGridViewTextBoxColumn,
+            this.sinopsisDataGridViewTextBoxColumn,
+            this.generoDataGridViewTextBoxColumn,
+            this.duracionDataGridViewTextBoxColumn,
+            this.costoDataGridViewTextBoxColumn});
+            this.grdBusquedaPeliculas.DataSource = this.peliculas1BindingSource1;
+            this.grdBusquedaPeliculas.Location = new System.Drawing.Point(5, 52);
+            this.grdBusquedaPeliculas.Margin = new System.Windows.Forms.Padding(1);
+            this.grdBusquedaPeliculas.Name = "grdBusquedaPeliculas";
+            this.grdBusquedaPeliculas.ReadOnly = true;
+            this.grdBusquedaPeliculas.RowHeadersWidth = 102;
+            this.grdBusquedaPeliculas.RowTemplate.Height = 40;
+            this.grdBusquedaPeliculas.Size = new System.Drawing.Size(789, 346);
+            this.grdBusquedaPeliculas.TabIndex = 19;
             // 
-            // idProducto
+            // peliculasBindingSource
             // 
-            this.idProducto.DataPropertyName = "idProducto";
-            this.idProducto.HeaderText = "ID";
-            this.idProducto.MinimumWidth = 12;
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            this.idProducto.Visible = false;
-            this.idProducto.Width = 250;
+            this.peliculasBindingSource.DataMember = "peliculas";
+            this.peliculasBindingSource.DataSource = this.dataSet_sistema_peliculas;
             // 
-            // categoria
+            // dataSet_sistema_peliculas
             // 
-            this.categoria.DataPropertyName = "categoria";
-            this.categoria.HeaderText = "CATEGORIA";
-            this.categoria.MinimumWidth = 12;
-            this.categoria.Name = "categoria";
-            this.categoria.ReadOnly = true;
-            this.categoria.Width = 250;
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "codigo";
-            this.codigo.HeaderText = "CODIGO";
-            this.codigo.MinimumWidth = 12;
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Width = 50;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "NOMBRE";
-            this.nombre.MinimumWidth = 12;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 150;
-            // 
-            // marca
-            // 
-            this.marca.DataPropertyName = "marca";
-            this.marca.HeaderText = "MARCA";
-            this.marca.MinimumWidth = 12;
-            this.marca.Name = "marca";
-            this.marca.ReadOnly = true;
-            this.marca.Width = 250;
-            // 
-            // presentacion
-            // 
-            this.presentacion.DataPropertyName = "presentacion";
-            this.presentacion.HeaderText = "PRESENTACION";
-            this.presentacion.MinimumWidth = 12;
-            this.presentacion.Name = "presentacion";
-            this.presentacion.ReadOnly = true;
-            this.presentacion.Width = 250;
+            this.dataSet_sistema_peliculas.DataSetName = "DataSet_sistema_peliculas";
+            this.dataSet_sistema_peliculas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtbuscar
             // 
@@ -157,6 +126,70 @@
             this.btnseleccionar.Text = "SELECCIONAR";
             this.btnseleccionar.UseVisualStyleBackColor = true;
             // 
+            // peliculas1BindingSource
+            // 
+            this.peliculas1BindingSource.DataMember = "peliculas1";
+            this.peliculas1BindingSource.DataSource = this.dataSet_sistema_peliculas;
+            // 
+            // peliculas1TableAdapter
+            // 
+            this.peliculas1TableAdapter.ClearBeforeFill = true;
+            // 
+            // peliculas1BindingSource1
+            // 
+            this.peliculas1BindingSource1.DataMember = "peliculas1";
+            this.peliculas1BindingSource1.DataSource = this.dataSet_sistema_peliculas;
+            // 
+            // idPeliculaDataGridViewTextBoxColumn
+            // 
+            this.idPeliculaDataGridViewTextBoxColumn.DataPropertyName = "IdPelicula";
+            this.idPeliculaDataGridViewTextBoxColumn.HeaderText = "IdPelicula";
+            this.idPeliculaDataGridViewTextBoxColumn.Name = "idPeliculaDataGridViewTextBoxColumn";
+            this.idPeliculaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idPeliculaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idAlquilerDataGridViewTextBoxColumn
+            // 
+            this.idAlquilerDataGridViewTextBoxColumn.DataPropertyName = "IdAlquiler";
+            this.idAlquilerDataGridViewTextBoxColumn.HeaderText = "Alquiler";
+            this.idAlquilerDataGridViewTextBoxColumn.Name = "idAlquilerDataGridViewTextBoxColumn";
+            this.idAlquilerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sinopsisDataGridViewTextBoxColumn
+            // 
+            this.sinopsisDataGridViewTextBoxColumn.DataPropertyName = "sinopsis";
+            this.sinopsisDataGridViewTextBoxColumn.HeaderText = "Sinopsis";
+            this.sinopsisDataGridViewTextBoxColumn.Name = "sinopsisDataGridViewTextBoxColumn";
+            this.sinopsisDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // generoDataGridViewTextBoxColumn
+            // 
+            this.generoDataGridViewTextBoxColumn.DataPropertyName = "genero";
+            this.generoDataGridViewTextBoxColumn.HeaderText = "Genero";
+            this.generoDataGridViewTextBoxColumn.Name = "generoDataGridViewTextBoxColumn";
+            this.generoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // duracionDataGridViewTextBoxColumn
+            // 
+            this.duracionDataGridViewTextBoxColumn.DataPropertyName = "duracion";
+            this.duracionDataGridViewTextBoxColumn.HeaderText = "Duracion";
+            this.duracionDataGridViewTextBoxColumn.Name = "duracionDataGridViewTextBoxColumn";
+            this.duracionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // costoDataGridViewTextBoxColumn
+            // 
+            this.costoDataGridViewTextBoxColumn.DataPropertyName = "costo";
+            this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
+            this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
+            this.costoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // BusquedaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,13 +197,18 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(804, 406);
             this.Controls.Add(this.btncancelar);
-            this.Controls.Add(this.grdBusquedaProductos);
+            this.Controls.Add(this.grdBusquedaPeliculas);
             this.Controls.Add(this.txtbuscar);
             this.Controls.Add(this.lblbuscar);
             this.Controls.Add(this.btnseleccionar);
             this.Name = "BusquedaProductos";
-            this.Text = "Busqueda de Productos";
-            ((System.ComponentModel.ISupportInitialize)(this.grdBusquedaProductos)).EndInit();
+            this.Text = "Busqueda de Peliculas";
+            this.Load += new System.EventHandler(this.BusquedaProductos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grdBusquedaPeliculas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peliculasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_sistema_peliculas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peliculas1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peliculas1BindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,15 +217,21 @@
         #endregion
 
         private System.Windows.Forms.Button btncancelar;
-        private System.Windows.Forms.DataGridView grdBusquedaProductos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn marca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn presentacion;
+        private System.Windows.Forms.DataGridView grdBusquedaPeliculas;
         private System.Windows.Forms.TextBox txtbuscar;
         private System.Windows.Forms.Label lblbuscar;
         private System.Windows.Forms.Button btnseleccionar;
+        private DataSet_sistema_peliculas dataSet_sistema_peliculas;
+        private System.Windows.Forms.BindingSource peliculasBindingSource;
+        private System.Windows.Forms.BindingSource peliculas1BindingSource;
+        private DataSet_sistema_peliculasTableAdapters.peliculas1TableAdapter peliculas1TableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPeliculaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAlquilerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sinopsisDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn generoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn duracionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource peliculas1BindingSource1;
     }
 }

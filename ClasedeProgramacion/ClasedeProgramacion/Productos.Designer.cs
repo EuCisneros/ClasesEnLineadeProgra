@@ -41,19 +41,21 @@
             this.btnprimero = new System.Windows.Forms.Button();
             this.grbDatosProductos = new System.Windows.Forms.GroupBox();
             this.btnBuscarCategoriaProductos = new System.Windows.Forms.Button();
-            this.cboCategoriaProductos = new System.Windows.Forms.ComboBox();
+            this.cboGeneroPeliculas = new System.Windows.Forms.ComboBox();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblidProducto = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtpresentacion = new System.Windows.Forms.TextBox();
+            this.txtcosto = new System.Windows.Forms.TextBox();
             this.lblpresentacion = new System.Windows.Forms.Label();
-            this.txtmarca = new System.Windows.Forms.TextBox();
             this.lblmarca = new System.Windows.Forms.Label();
-            this.txtnombre = new System.Windows.Forms.TextBox();
+            this.txtdescripcion = new System.Windows.Forms.TextBox();
             this.lblnombre = new System.Windows.Forms.Label();
-            this.txtcodigo = new System.Windows.Forms.TextBox();
+            this.txtalquiler = new System.Windows.Forms.TextBox();
             this.lblcodigo = new System.Windows.Forms.Label();
+            this.txtsinopsis = new System.Windows.Forms.TextBox();
+            this.txtduracion = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.grbEdicion.SuspendLayout();
             this.grbNavegacion.SuspendLayout();
             this.grbDatosProductos.SuspendLayout();
@@ -83,6 +85,7 @@
             this.btnBuscar.TabIndex = 4;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btneliminar
             // 
@@ -93,6 +96,7 @@
             this.btneliminar.TabIndex = 4;
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.UseVisualStyleBackColor = true;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // btnModificar
             // 
@@ -103,6 +107,7 @@
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnNuevo
             // 
@@ -113,6 +118,7 @@
             this.btnNuevo.TabIndex = 2;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // grbNavegacion
             // 
@@ -181,19 +187,21 @@
             // 
             // grbDatosProductos
             // 
+            this.grbDatosProductos.Controls.Add(this.txtduracion);
+            this.grbDatosProductos.Controls.Add(this.label1);
+            this.grbDatosProductos.Controls.Add(this.txtsinopsis);
             this.grbDatosProductos.Controls.Add(this.btnBuscarCategoriaProductos);
-            this.grbDatosProductos.Controls.Add(this.cboCategoriaProductos);
+            this.grbDatosProductos.Controls.Add(this.cboGeneroPeliculas);
             this.grbDatosProductos.Controls.Add(this.lblCategoria);
             this.grbDatosProductos.Controls.Add(this.lblidProducto);
             this.grbDatosProductos.Controls.Add(this.textBox6);
             this.grbDatosProductos.Controls.Add(this.label6);
-            this.grbDatosProductos.Controls.Add(this.txtpresentacion);
+            this.grbDatosProductos.Controls.Add(this.txtcosto);
             this.grbDatosProductos.Controls.Add(this.lblpresentacion);
-            this.grbDatosProductos.Controls.Add(this.txtmarca);
             this.grbDatosProductos.Controls.Add(this.lblmarca);
-            this.grbDatosProductos.Controls.Add(this.txtnombre);
+            this.grbDatosProductos.Controls.Add(this.txtdescripcion);
             this.grbDatosProductos.Controls.Add(this.lblnombre);
-            this.grbDatosProductos.Controls.Add(this.txtcodigo);
+            this.grbDatosProductos.Controls.Add(this.txtalquiler);
             this.grbDatosProductos.Controls.Add(this.lblcodigo);
             this.grbDatosProductos.Enabled = false;
             this.grbDatosProductos.Location = new System.Drawing.Point(10, 10);
@@ -207,22 +215,22 @@
             // 
             // btnBuscarCategoriaProductos
             // 
-            this.btnBuscarCategoriaProductos.Location = new System.Drawing.Point(258, 34);
+            this.btnBuscarCategoriaProductos.Location = new System.Drawing.Point(267, 35);
             this.btnBuscarCategoriaProductos.Margin = new System.Windows.Forms.Padding(1);
             this.btnBuscarCategoriaProductos.Name = "btnBuscarCategoriaProductos";
             this.btnBuscarCategoriaProductos.Size = new System.Drawing.Size(128, 26);
             this.btnBuscarCategoriaProductos.TabIndex = 15;
-            this.btnBuscarCategoriaProductos.Text = "Buscar Categorias";
+            this.btnBuscarCategoriaProductos.Text = "Buscar Alquiler";
             this.btnBuscarCategoriaProductos.UseVisualStyleBackColor = true;
             // 
-            // cboCategoriaProductos
+            // cboGeneroPeliculas
             // 
-            this.cboCategoriaProductos.FormattingEnabled = true;
-            this.cboCategoriaProductos.Location = new System.Drawing.Point(104, 39);
-            this.cboCategoriaProductos.Margin = new System.Windows.Forms.Padding(1);
-            this.cboCategoriaProductos.Name = "cboCategoriaProductos";
-            this.cboCategoriaProductos.Size = new System.Drawing.Size(154, 21);
-            this.cboCategoriaProductos.TabIndex = 14;
+            this.cboGeneroPeliculas.FormattingEnabled = true;
+            this.cboGeneroPeliculas.Location = new System.Drawing.Point(104, 39);
+            this.cboGeneroPeliculas.Margin = new System.Windows.Forms.Padding(1);
+            this.cboGeneroPeliculas.Name = "cboGeneroPeliculas";
+            this.cboGeneroPeliculas.Size = new System.Drawing.Size(154, 21);
+            this.cboGeneroPeliculas.TabIndex = 14;
             // 
             // lblCategoria
             // 
@@ -230,9 +238,9 @@
             this.lblCategoria.Location = new System.Drawing.Point(13, 39);
             this.lblCategoria.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(72, 13);
+            this.lblCategoria.Size = new System.Drawing.Size(53, 13);
             this.lblCategoria.TabIndex = 13;
-            this.lblCategoria.Text = "CATEGORIA:";
+            this.lblCategoria.Text = "GENERO";
             // 
             // lblidProducto
             // 
@@ -262,50 +270,42 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "label6";
             // 
-            // txtpresentacion
+            // txtcosto
             // 
-            this.txtpresentacion.Location = new System.Drawing.Point(104, 229);
-            this.txtpresentacion.Margin = new System.Windows.Forms.Padding(1);
-            this.txtpresentacion.Name = "txtpresentacion";
-            this.txtpresentacion.Size = new System.Drawing.Size(81, 20);
-            this.txtpresentacion.TabIndex = 5;
+            this.txtcosto.Location = new System.Drawing.Point(99, 277);
+            this.txtcosto.Margin = new System.Windows.Forms.Padding(1);
+            this.txtcosto.Name = "txtcosto";
+            this.txtcosto.Size = new System.Drawing.Size(81, 20);
+            this.txtcosto.TabIndex = 5;
             // 
             // lblpresentacion
             // 
             this.lblpresentacion.AutoSize = true;
-            this.lblpresentacion.Location = new System.Drawing.Point(14, 229);
+            this.lblpresentacion.Location = new System.Drawing.Point(38, 280);
             this.lblpresentacion.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblpresentacion.Name = "lblpresentacion";
-            this.lblpresentacion.Size = new System.Drawing.Size(94, 13);
+            this.lblpresentacion.Size = new System.Drawing.Size(47, 13);
             this.lblpresentacion.TabIndex = 4;
-            this.lblpresentacion.Text = "PRESENTACION:";
-            // 
-            // txtmarca
-            // 
-            this.txtmarca.Location = new System.Drawing.Point(104, 188);
-            this.txtmarca.Margin = new System.Windows.Forms.Padding(1);
-            this.txtmarca.Name = "txtmarca";
-            this.txtmarca.Size = new System.Drawing.Size(129, 20);
-            this.txtmarca.TabIndex = 3;
+            this.lblpresentacion.Text = "COSTO:";
             // 
             // lblmarca
             // 
             this.lblmarca.AutoSize = true;
-            this.lblmarca.Location = new System.Drawing.Point(13, 189);
+            this.lblmarca.Location = new System.Drawing.Point(33, 192);
             this.lblmarca.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblmarca.Name = "lblmarca";
-            this.lblmarca.Size = new System.Drawing.Size(48, 13);
+            this.lblmarca.Size = new System.Drawing.Size(57, 13);
             this.lblmarca.TabIndex = 2;
-            this.lblmarca.Text = "MARCA:";
+            this.lblmarca.Text = "SINOPSIS";
             // 
-            // txtnombre
+            // txtdescripcion
             // 
-            this.txtnombre.Location = new System.Drawing.Point(104, 122);
-            this.txtnombre.Margin = new System.Windows.Forms.Padding(1);
-            this.txtnombre.Multiline = true;
-            this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(205, 59);
-            this.txtnombre.TabIndex = 3;
+            this.txtdescripcion.Location = new System.Drawing.Point(104, 122);
+            this.txtdescripcion.Margin = new System.Windows.Forms.Padding(1);
+            this.txtdescripcion.Multiline = true;
+            this.txtdescripcion.Name = "txtdescripcion";
+            this.txtdescripcion.Size = new System.Drawing.Size(205, 59);
+            this.txtdescripcion.TabIndex = 3;
             // 
             // lblnombre
             // 
@@ -313,17 +313,17 @@
             this.lblnombre.Location = new System.Drawing.Point(13, 122);
             this.lblnombre.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblnombre.Name = "lblnombre";
-            this.lblnombre.Size = new System.Drawing.Size(57, 13);
+            this.lblnombre.Size = new System.Drawing.Size(83, 13);
             this.lblnombre.TabIndex = 2;
-            this.lblnombre.Text = "NOMBRE:";
+            this.lblnombre.Text = "DESCRIPCION:";
             // 
-            // txtcodigo
+            // txtalquiler
             // 
-            this.txtcodigo.Location = new System.Drawing.Point(104, 88);
-            this.txtcodigo.Margin = new System.Windows.Forms.Padding(1);
-            this.txtcodigo.Name = "txtcodigo";
-            this.txtcodigo.Size = new System.Drawing.Size(76, 20);
-            this.txtcodigo.TabIndex = 1;
+            this.txtalquiler.Location = new System.Drawing.Point(104, 88);
+            this.txtalquiler.Margin = new System.Windows.Forms.Padding(1);
+            this.txtalquiler.Name = "txtalquiler";
+            this.txtalquiler.Size = new System.Drawing.Size(76, 20);
+            this.txtalquiler.TabIndex = 1;
             // 
             // lblcodigo
             // 
@@ -331,9 +331,36 @@
             this.lblcodigo.Location = new System.Drawing.Point(13, 86);
             this.lblcodigo.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblcodigo.Name = "lblcodigo";
-            this.lblcodigo.Size = new System.Drawing.Size(52, 13);
+            this.lblcodigo.Size = new System.Drawing.Size(60, 13);
             this.lblcodigo.TabIndex = 0;
-            this.lblcodigo.Text = "CODIGO:";
+            this.lblcodigo.Text = "ALQUILER";
+            // 
+            // txtsinopsis
+            // 
+            this.txtsinopsis.Location = new System.Drawing.Point(104, 189);
+            this.txtsinopsis.Margin = new System.Windows.Forms.Padding(1);
+            this.txtsinopsis.Multiline = true;
+            this.txtsinopsis.Name = "txtsinopsis";
+            this.txtsinopsis.Size = new System.Drawing.Size(205, 59);
+            this.txtsinopsis.TabIndex = 16;
+            // 
+            // txtduracion
+            // 
+            this.txtduracion.Location = new System.Drawing.Point(341, 82);
+            this.txtduracion.Margin = new System.Windows.Forms.Padding(1);
+            this.txtduracion.Name = "txtduracion";
+            this.txtduracion.Size = new System.Drawing.Size(81, 20);
+            this.txtduracion.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(272, 85);
+            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "DURACION:";
             // 
             // Productos
             // 
@@ -346,6 +373,7 @@
             this.Controls.Add(this.grbDatosProductos);
             this.Name = "Productos";
             this.Text = "Productos";
+            this.Load += new System.EventHandler(this.Productos_Load);
             this.grbEdicion.ResumeLayout(false);
             this.grbNavegacion.ResumeLayout(false);
             this.grbNavegacion.PerformLayout();
@@ -370,18 +398,20 @@
         private System.Windows.Forms.Button btnprimero;
         private System.Windows.Forms.GroupBox grbDatosProductos;
         private System.Windows.Forms.Button btnBuscarCategoriaProductos;
-        private System.Windows.Forms.ComboBox cboCategoriaProductos;
+        private System.Windows.Forms.ComboBox cboGeneroPeliculas;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblidProducto;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtpresentacion;
+        private System.Windows.Forms.TextBox txtcosto;
         private System.Windows.Forms.Label lblpresentacion;
-        private System.Windows.Forms.TextBox txtmarca;
         private System.Windows.Forms.Label lblmarca;
-        private System.Windows.Forms.TextBox txtnombre;
+        private System.Windows.Forms.TextBox txtdescripcion;
         private System.Windows.Forms.Label lblnombre;
-        private System.Windows.Forms.TextBox txtcodigo;
+        private System.Windows.Forms.TextBox txtalquiler;
         private System.Windows.Forms.Label lblcodigo;
+        private System.Windows.Forms.TextBox txtsinopsis;
+        private System.Windows.Forms.TextBox txtduracion;
+        private System.Windows.Forms.Label label1;
     }
 }

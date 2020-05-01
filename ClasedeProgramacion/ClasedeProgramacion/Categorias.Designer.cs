@@ -45,6 +45,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.lblnombre = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtpelicula = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtfechapres = new System.Windows.Forms.DateTimePicker();
+            this.dtfechadev = new System.Windows.Forms.DateTimePicker();
             this.grbEdicion.SuspendLayout();
             this.grbNavegacion.SuspendLayout();
             this.grbDatosCategorias.SuspendLayout();
@@ -63,7 +69,7 @@
             this.grbEdicion.Size = new System.Drawing.Size(236, 57);
             this.grbEdicion.TabIndex = 11;
             this.grbEdicion.TabStop = false;
-            this.grbEdicion.Text = "Edicion de Categroias";
+            this.grbEdicion.Text = "Edicion de Alquiler";
             // 
             // btnBuscar
             // 
@@ -74,6 +80,7 @@
             this.btnBuscar.TabIndex = 4;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btneliminar
             // 
@@ -84,6 +91,7 @@
             this.btneliminar.TabIndex = 4;
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.UseVisualStyleBackColor = true;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // btnModificar
             // 
@@ -94,6 +102,7 @@
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnNuevo
             // 
@@ -104,6 +113,7 @@
             this.btnNuevo.TabIndex = 2;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // grbNavegacion
             // 
@@ -172,6 +182,12 @@
             // 
             // grbDatosCategorias
             // 
+            this.grbDatosCategorias.Controls.Add(this.dtfechadev);
+            this.grbDatosCategorias.Controls.Add(this.dtfechapres);
+            this.grbDatosCategorias.Controls.Add(this.label3);
+            this.grbDatosCategorias.Controls.Add(this.txtpelicula);
+            this.grbDatosCategorias.Controls.Add(this.label2);
+            this.grbDatosCategorias.Controls.Add(this.label1);
             this.grbDatosCategorias.Controls.Add(this.lblidCategoria);
             this.grbDatosCategorias.Controls.Add(this.textBox6);
             this.grbDatosCategorias.Controls.Add(this.label6);
@@ -185,12 +201,12 @@
             this.grbDatosCategorias.Size = new System.Drawing.Size(457, 166);
             this.grbDatosCategorias.TabIndex = 9;
             this.grbDatosCategorias.TabStop = false;
-            this.grbDatosCategorias.Text = "Datos de Categorias";
+            this.grbDatosCategorias.Text = "Datos de Alquiler";
             // 
             // lblidCategoria
             // 
             this.lblidCategoria.AutoSize = true;
-            this.lblidCategoria.Location = new System.Drawing.Point(12, 44);
+            this.lblidCategoria.Location = new System.Drawing.Point(12, 27);
             this.lblidCategoria.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblidCategoria.Name = "lblidCategoria";
             this.lblidCategoria.Size = new System.Drawing.Size(21, 13);
@@ -217,22 +233,73 @@
             // 
             // txtnombre
             // 
-            this.txtnombre.Location = new System.Drawing.Point(85, 74);
+            this.txtnombre.Location = new System.Drawing.Point(140, 46);
             this.txtnombre.Margin = new System.Windows.Forms.Padding(1);
-            this.txtnombre.Multiline = true;
             this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(312, 64);
+            this.txtnombre.Size = new System.Drawing.Size(148, 20);
             this.txtnombre.TabIndex = 3;
             // 
             // lblnombre
             // 
             this.lblnombre.AutoSize = true;
-            this.lblnombre.Location = new System.Drawing.Point(12, 74);
+            this.lblnombre.Location = new System.Drawing.Point(12, 53);
             this.lblnombre.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblnombre.Name = "lblnombre";
-            this.lblnombre.Size = new System.Drawing.Size(57, 13);
+            this.lblnombre.Size = new System.Drawing.Size(105, 13);
             this.lblnombre.TabIndex = 2;
-            this.lblnombre.Text = "NOMBRE:";
+            this.lblnombre.Text = "NOMBRE CLIENTE:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 75);
+            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "PELICULA:";
+            // 
+            // txtpelicula
+            // 
+            this.txtpelicula.Location = new System.Drawing.Point(140, 68);
+            this.txtpelicula.Margin = new System.Windows.Forms.Padding(1);
+            this.txtpelicula.Name = "txtpelicula";
+            this.txtpelicula.Size = new System.Drawing.Size(148, 20);
+            this.txtpelicula.TabIndex = 16;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 97);
+            this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(126, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "FECHA DE PRESTAMO:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 119);
+            this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(136, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "FECHA DE DEVOLUCION:";
+            // 
+            // dtfechapres
+            // 
+            this.dtfechapres.Location = new System.Drawing.Point(143, 96);
+            this.dtfechapres.Name = "dtfechapres";
+            this.dtfechapres.Size = new System.Drawing.Size(200, 20);
+            this.dtfechapres.TabIndex = 19;
+            // 
+            // dtfechadev
+            // 
+            this.dtfechadev.Location = new System.Drawing.Point(152, 119);
+            this.dtfechadev.Name = "dtfechadev";
+            this.dtfechadev.Size = new System.Drawing.Size(200, 20);
+            this.dtfechadev.TabIndex = 20;
             // 
             // Categorias
             // 
@@ -244,7 +311,9 @@
             this.Controls.Add(this.grbNavegacion);
             this.Controls.Add(this.grbDatosCategorias);
             this.Name = "Categorias";
-            this.Text = "Categorias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Alquiler";
+            this.Load += new System.EventHandler(this.Categorias_Load);
             this.grbEdicion.ResumeLayout(false);
             this.grbNavegacion.ResumeLayout(false);
             this.grbNavegacion.PerformLayout();
@@ -273,5 +342,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.Label lblnombre;
+        private System.Windows.Forms.DateTimePicker dtfechadev;
+        private System.Windows.Forms.DateTimePicker dtfechapres;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtpelicula;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
