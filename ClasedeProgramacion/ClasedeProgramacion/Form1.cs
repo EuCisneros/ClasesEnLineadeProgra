@@ -17,6 +17,8 @@ namespace ClasedeProgramacion
         string accion = "nuevo";
         DataTable tbl = new DataTable();
 
+        
+
         public Form1()
         {
             InitializeComponent();
@@ -30,19 +32,18 @@ namespace ClasedeProgramacion
         void actualizarDs()
         {
             tbl = objConexion.obtener_datos().Tables["clientes"];
-            tbl.PrimaryKey = new DataColumn[] { tbl.Columns["idCliente"] };
+            tbl.PrimaryKey = new DataColumn[] { tbl.Columns["IdCliente"] };
         }
         void mostrarDatos()
         {
             try
             {
                 lblidCliente.Text = tbl.Rows[posicion].ItemArray[0].ToString();
-                txtcodigo.Text = tbl.Rows[posicion].ItemArray[1].ToString();
-                txtnombre.Text = tbl.Rows[posicion].ItemArray[2].ToString();
-                txtdireccion.Text = tbl.Rows[posicion].ItemArray[3].ToString();
-                txttelefono.Text = tbl.Rows[posicion].ItemArray[4].ToString();
-                txtdui.Text = tbl.Rows[posicion].ItemArray[5].ToString();
-                txtnit.Text = tbl.Rows[posicion].ItemArray[6].ToString();
+                txtnombre.Text = tbl.Rows[posicion].ItemArray[1].ToString();
+                txtdireccion.Text = tbl.Rows[posicion].ItemArray[2].ToString();
+                txttelefono.Text = tbl.Rows[posicion].ItemArray[3].ToString();
+                txtdui.Text = tbl.Rows[posicion].ItemArray[4].ToString();
+                
 
                 lblnregistros.Text = (posicion + 1) + " de " + tbl.Rows.Count;
             }
@@ -96,12 +97,12 @@ namespace ClasedeProgramacion
 
         void limpiar_cajas()
         {
-            txtcodigo.Text = "";
+           
             txtnombre.Text = "";
             txtdireccion.Text = "";
             txttelefono.Text = "";
             txtdui.Text = "";
-            txtnit.Text = "";
+           
         }
         void controles(Boolean valor)
         {
@@ -126,12 +127,10 @@ namespace ClasedeProgramacion
             { //boton de guardar
                 String[] valores = {
                     lblidCliente.Text,
-                    txtcodigo.Text,
                     txtnombre.Text,
                     txtdireccion.Text,
                     txttelefono.Text,
-                    txtdui.Text,
-                    txtnit.Text
+                    txtdui.Text
                 };
                 objConexion.mantenimiento_datos(valores, accion);
                 actualizarDs();
@@ -185,12 +184,12 @@ namespace ClasedeProgramacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            busqueda_clientes frmBusquedaClientes = new busqueda_clientes();
+            BusquedeCliente frmBusquedaClientes = new BusquedeCliente();
             frmBusquedaClientes.ShowDialog();
 
-            if (frmBusquedaClientes._idCliente > 0)
+            if (frmBusquedaClientes._IdCliente > 0)
             {
-                posicion = tbl.Rows.IndexOf(tbl.Rows.Find(frmBusquedaClientes._idCliente));
+                posicion = tbl.Rows.IndexOf(tbl.Rows.Find(frmBusquedaClientes._IdCliente));
                 mostrarDatos();
             }
         }
