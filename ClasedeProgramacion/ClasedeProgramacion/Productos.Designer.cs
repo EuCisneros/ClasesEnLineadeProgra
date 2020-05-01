@@ -40,6 +40,9 @@
             this.btnanterior = new System.Windows.Forms.Button();
             this.btnprimero = new System.Windows.Forms.Button();
             this.grbDatosProductos = new System.Windows.Forms.GroupBox();
+            this.txtduracion = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtsinopsis = new System.Windows.Forms.TextBox();
             this.btnBuscarCategoriaProductos = new System.Windows.Forms.Button();
             this.cboGeneroPeliculas = new System.Windows.Forms.ComboBox();
             this.lblCategoria = new System.Windows.Forms.Label();
@@ -53,9 +56,6 @@
             this.lblnombre = new System.Windows.Forms.Label();
             this.txtalquiler = new System.Windows.Forms.TextBox();
             this.lblcodigo = new System.Windows.Forms.Label();
-            this.txtsinopsis = new System.Windows.Forms.TextBox();
-            this.txtduracion = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.grbEdicion.SuspendLayout();
             this.grbNavegacion.SuspendLayout();
             this.grbDatosProductos.SuspendLayout();
@@ -154,6 +154,7 @@
             this.btnultimo.TabIndex = 3;
             this.btnultimo.Text = ">|";
             this.btnultimo.UseVisualStyleBackColor = true;
+            this.btnultimo.Click += new System.EventHandler(this.btnultimo_Click);
             // 
             // btnsiguiente
             // 
@@ -164,6 +165,7 @@
             this.btnsiguiente.TabIndex = 2;
             this.btnsiguiente.Text = ">";
             this.btnsiguiente.UseVisualStyleBackColor = true;
+            this.btnsiguiente.Click += new System.EventHandler(this.btnsiguiente_Click);
             // 
             // btnanterior
             // 
@@ -174,6 +176,7 @@
             this.btnanterior.TabIndex = 1;
             this.btnanterior.Text = "<";
             this.btnanterior.UseVisualStyleBackColor = true;
+            this.btnanterior.Click += new System.EventHandler(this.btnanterior_Click);
             // 
             // btnprimero
             // 
@@ -184,6 +187,7 @@
             this.btnprimero.TabIndex = 0;
             this.btnprimero.Text = "|<";
             this.btnprimero.UseVisualStyleBackColor = true;
+            this.btnprimero.Click += new System.EventHandler(this.btnprimero_Click);
             // 
             // grbDatosProductos
             // 
@@ -213,6 +217,33 @@
             this.grbDatosProductos.TabStop = false;
             this.grbDatosProductos.Text = "Datos de Productos";
             // 
+            // txtduracion
+            // 
+            this.txtduracion.Location = new System.Drawing.Point(341, 82);
+            this.txtduracion.Margin = new System.Windows.Forms.Padding(1);
+            this.txtduracion.Name = "txtduracion";
+            this.txtduracion.Size = new System.Drawing.Size(81, 20);
+            this.txtduracion.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(272, 85);
+            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "DURACION:";
+            // 
+            // txtsinopsis
+            // 
+            this.txtsinopsis.Location = new System.Drawing.Point(104, 189);
+            this.txtsinopsis.Margin = new System.Windows.Forms.Padding(1);
+            this.txtsinopsis.Multiline = true;
+            this.txtsinopsis.Name = "txtsinopsis";
+            this.txtsinopsis.Size = new System.Drawing.Size(205, 59);
+            this.txtsinopsis.TabIndex = 16;
+            // 
             // btnBuscarCategoriaProductos
             // 
             this.btnBuscarCategoriaProductos.Location = new System.Drawing.Point(267, 35);
@@ -222,6 +253,7 @@
             this.btnBuscarCategoriaProductos.TabIndex = 15;
             this.btnBuscarCategoriaProductos.Text = "Buscar Alquiler";
             this.btnBuscarCategoriaProductos.UseVisualStyleBackColor = true;
+            this.btnBuscarCategoriaProductos.Click += new System.EventHandler(this.btnBuscarCategoriaProductos_Click);
             // 
             // cboGeneroPeliculas
             // 
@@ -334,33 +366,6 @@
             this.lblcodigo.Size = new System.Drawing.Size(60, 13);
             this.lblcodigo.TabIndex = 0;
             this.lblcodigo.Text = "ALQUILER";
-            // 
-            // txtsinopsis
-            // 
-            this.txtsinopsis.Location = new System.Drawing.Point(104, 189);
-            this.txtsinopsis.Margin = new System.Windows.Forms.Padding(1);
-            this.txtsinopsis.Multiline = true;
-            this.txtsinopsis.Name = "txtsinopsis";
-            this.txtsinopsis.Size = new System.Drawing.Size(205, 59);
-            this.txtsinopsis.TabIndex = 16;
-            // 
-            // txtduracion
-            // 
-            this.txtduracion.Location = new System.Drawing.Point(341, 82);
-            this.txtduracion.Margin = new System.Windows.Forms.Padding(1);
-            this.txtduracion.Name = "txtduracion";
-            this.txtduracion.Size = new System.Drawing.Size(81, 20);
-            this.txtduracion.TabIndex = 18;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(272, 85);
-            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "DURACION:";
             // 
             // Productos
             // 

@@ -51,6 +51,7 @@
             this.lbldireccion = new System.Windows.Forms.Label();
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.lblnombre = new System.Windows.Forms.Label();
+            this.btnPeliculas = new System.Windows.Forms.Button();
             this.grbEdicion.SuspendLayout();
             this.grbNavegacion.SuspendLayout();
             this.grbDatosClientes.SuspendLayout();
@@ -212,6 +213,7 @@
             // 
             // grbDatosClientes
             // 
+            this.grbDatosClientes.Controls.Add(this.btnPeliculas);
             this.grbDatosClientes.Controls.Add(this.lblidCliente);
             this.grbDatosClientes.Controls.Add(this.textBox6);
             this.grbDatosClientes.Controls.Add(this.label6);
@@ -346,6 +348,20 @@
             this.lblnombre.TabIndex = 2;
             this.lblnombre.Text = "NOMBRE:";
             // 
+            // btnPeliculas
+            // 
+            this.btnPeliculas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.btnPeliculas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPeliculas.ForeColor = System.Drawing.Color.White;
+            this.btnPeliculas.Location = new System.Drawing.Point(376, 272);
+            this.btnPeliculas.Margin = new System.Windows.Forms.Padding(1);
+            this.btnPeliculas.Name = "btnPeliculas";
+            this.btnPeliculas.Size = new System.Drawing.Size(60, 33);
+            this.btnPeliculas.TabIndex = 5;
+            this.btnPeliculas.Text = "Peliculas";
+            this.btnPeliculas.UseVisualStyleBackColor = false;
+            this.btnPeliculas.Click += new System.EventHandler(this.btnPeliculas_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,6 +409,7 @@
         private System.Windows.Forms.Label lbldireccion;
         private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.Label lblnombre;
+        private System.Windows.Forms.Button btnPeliculas;
     }
 }
 

@@ -55,7 +55,7 @@ namespace ClasedeProgramacion
                 limpiar_cajas();
             }
         }
-        //botones
+
 
 
         //limpiar caja
@@ -158,6 +158,46 @@ namespace ClasedeProgramacion
                 posicion = tbl.Rows.IndexOf(tbl.Rows.Find(frmBusquedaAlquiler._IdAlquiler));
                 mostrarDatos();
             }
+        }
+        //botones
+        private void btnprimero_Click(object sender, EventArgs e)
+        {
+            posicion = 0;
+            mostrarDatos();
+        }
+
+        private void btnanterior_Click(object sender, EventArgs e)
+        {
+            if (posicion > 0)
+            {
+                posicion--;
+                mostrarDatos();
+            }
+            else
+            {
+                MessageBox.Show("Primer Registro...", "Registros de Cliente",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnsiguiente_Click(object sender, EventArgs e)
+        {
+            if (posicion < tbl.Rows.Count - 1)
+            {
+                posicion++;
+                mostrarDatos();
+            }
+            else
+            {
+                MessageBox.Show("Ultimo Registro...", "Registros de Cliente",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnultimo_Click(object sender, EventArgs e)
+        {
+            posicion = tbl.Rows.Count - 1;
+            mostrarDatos();
         }
     }
 }

@@ -40,17 +40,17 @@
             this.btnanterior = new System.Windows.Forms.Button();
             this.btnprimero = new System.Windows.Forms.Button();
             this.grbDatosCategorias = new System.Windows.Forms.GroupBox();
+            this.dtfechadev = new System.Windows.Forms.DateTimePicker();
+            this.dtfechapres = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtpelicula = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblidCategoria = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.lblnombre = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtpelicula = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtfechapres = new System.Windows.Forms.DateTimePicker();
-            this.dtfechadev = new System.Windows.Forms.DateTimePicker();
             this.grbEdicion.SuspendLayout();
             this.grbNavegacion.SuspendLayout();
             this.grbDatosCategorias.SuspendLayout();
@@ -149,6 +149,7 @@
             this.btnultimo.TabIndex = 3;
             this.btnultimo.Text = ">|";
             this.btnultimo.UseVisualStyleBackColor = true;
+            this.btnultimo.Click += new System.EventHandler(this.btnultimo_Click);
             // 
             // btnsiguiente
             // 
@@ -159,6 +160,7 @@
             this.btnsiguiente.TabIndex = 2;
             this.btnsiguiente.Text = ">";
             this.btnsiguiente.UseVisualStyleBackColor = true;
+            this.btnsiguiente.Click += new System.EventHandler(this.btnsiguiente_Click);
             // 
             // btnanterior
             // 
@@ -169,6 +171,7 @@
             this.btnanterior.TabIndex = 1;
             this.btnanterior.Text = "<";
             this.btnanterior.UseVisualStyleBackColor = true;
+            this.btnanterior.Click += new System.EventHandler(this.btnanterior_Click);
             // 
             // btnprimero
             // 
@@ -179,6 +182,7 @@
             this.btnprimero.TabIndex = 0;
             this.btnprimero.Text = "|<";
             this.btnprimero.UseVisualStyleBackColor = true;
+            this.btnprimero.Click += new System.EventHandler(this.btnprimero_Click);
             // 
             // grbDatosCategorias
             // 
@@ -202,6 +206,58 @@
             this.grbDatosCategorias.TabIndex = 9;
             this.grbDatosCategorias.TabStop = false;
             this.grbDatosCategorias.Text = "Datos de Alquiler";
+            // 
+            // dtfechadev
+            // 
+            this.dtfechadev.Location = new System.Drawing.Point(152, 119);
+            this.dtfechadev.Name = "dtfechadev";
+            this.dtfechadev.Size = new System.Drawing.Size(200, 20);
+            this.dtfechadev.TabIndex = 20;
+            // 
+            // dtfechapres
+            // 
+            this.dtfechapres.Location = new System.Drawing.Point(143, 96);
+            this.dtfechapres.Name = "dtfechapres";
+            this.dtfechapres.Size = new System.Drawing.Size(200, 20);
+            this.dtfechapres.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 119);
+            this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(136, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "FECHA DE DEVOLUCION:";
+            // 
+            // txtpelicula
+            // 
+            this.txtpelicula.Location = new System.Drawing.Point(140, 68);
+            this.txtpelicula.Margin = new System.Windows.Forms.Padding(1);
+            this.txtpelicula.Name = "txtpelicula";
+            this.txtpelicula.Size = new System.Drawing.Size(148, 20);
+            this.txtpelicula.TabIndex = 16;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 97);
+            this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(126, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "FECHA DE PRESTAMO:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 75);
+            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "PELICULA:";
             // 
             // lblidCategoria
             // 
@@ -248,58 +304,6 @@
             this.lblnombre.Size = new System.Drawing.Size(105, 13);
             this.lblnombre.TabIndex = 2;
             this.lblnombre.Text = "NOMBRE CLIENTE:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 75);
-            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "PELICULA:";
-            // 
-            // txtpelicula
-            // 
-            this.txtpelicula.Location = new System.Drawing.Point(140, 68);
-            this.txtpelicula.Margin = new System.Windows.Forms.Padding(1);
-            this.txtpelicula.Name = "txtpelicula";
-            this.txtpelicula.Size = new System.Drawing.Size(148, 20);
-            this.txtpelicula.TabIndex = 16;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 97);
-            this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "FECHA DE PRESTAMO:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 119);
-            this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 13);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "FECHA DE DEVOLUCION:";
-            // 
-            // dtfechapres
-            // 
-            this.dtfechapres.Location = new System.Drawing.Point(143, 96);
-            this.dtfechapres.Name = "dtfechapres";
-            this.dtfechapres.Size = new System.Drawing.Size(200, 20);
-            this.dtfechapres.TabIndex = 19;
-            // 
-            // dtfechadev
-            // 
-            this.dtfechadev.Location = new System.Drawing.Point(152, 119);
-            this.dtfechadev.Name = "dtfechadev";
-            this.dtfechadev.Size = new System.Drawing.Size(200, 20);
-            this.dtfechadev.TabIndex = 20;
             // 
             // Categorias
             // 

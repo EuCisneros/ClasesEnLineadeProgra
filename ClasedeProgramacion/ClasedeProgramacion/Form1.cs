@@ -193,5 +193,11 @@ namespace ClasedeProgramacion
                 mostrarDatos();
             }
         }
+
+        private void btnPeliculas_Click(object sender, EventArgs e)
+        {
+            Productos Peliculas = new Productos();
+            Peliculas.ShowDialog();
+        }
     }
 }
