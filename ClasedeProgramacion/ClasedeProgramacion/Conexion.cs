@@ -19,9 +19,9 @@ namespace ClasedeProgramacion
 
         DataSet ds = new DataSet();
 
-        public Conexion_db()
+        public Conexion()
         {
-            String cadena = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\sistema_db.mdf;Integrated Security=True";
+            String cadena = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db_sistema_peliculas.mdf;Integrated Security=True";
             miConexion.ConnectionString = cadena;
             miConexion.Open();
         }
@@ -34,17 +34,17 @@ namespace ClasedeProgramacion
             miAdaptadorDatos.SelectCommand = comandosSQL;
             miAdaptadorDatos.Fill(ds, "clientes");
 
-            comandosSQL.CommandText = "select * from productos";
+            comandosSQL.CommandText = "select * from peliculas";
             miAdaptadorDatos.SelectCommand = comandosSQL;
             miAdaptadorDatos.Fill(ds, "productos");
 
-            comandosSQL.CommandText = "select categorias.categoria, productos.idProducto, productos.codigo, productos.nombre, productos.marca, productos.presentacion from productos inner join categorias on(categorias.idCategoria=productos.idCategoria)";
+            comandosSQL.CommandText = "select alquiler.IdAlquiler, peliculas.idPelicula, pelicula.descripcion, peliculas.sinopsis, peliculas.generp from peliculas inner join alquiler on(alquiler.idAlquiler=peliculas.IdAlquiler)";
             miAdaptadorDatos.SelectCommand = comandosSQL;
-            miAdaptadorDatos.Fill(ds, "productos_categorias");
+            miAdaptadorDatos.Fill(ds, "peliculas_alquiler");
 
-            comandosSQL.CommandText = "select * from categorias";
+            comandosSQL.CommandText = "select * from alquiler";
             miAdaptadorDatos.SelectCommand = comandosSQL;
-            miAdaptadorDatos.Fill(ds, "categorias");
+            miAdaptadorDatos.Fill(ds, "alquiler");
 
             return ds;
         }
@@ -53,7 +53,35 @@ namespace ClasedeProgramacion
             String sql = "";
             if (accion == "nuevo")
             {
-                sql = "INSERT INTO clientes (codigo,nombre,direccion,telefono,dui,nit) VALUES(" +
+                sql = "INSERT INTO clientes (nombre,direccion,telefono,dui) VALUES(" +
+                    "'" + datos[1] + "'," +
+                    "'" + datos[2] + "'," +
+                    "'" + datos[3] + "'," +
+                    "'" + datos[4] + "'" +
+                   
+                    ")";
+            }
+            else if (accion == "modificar")
+            {
+                sql = "UPDATE clientes SET " +
+                    "nombre       = '" + datos[1] + "'," +
+                    "direccion         = '" + datos[2] + "'," +
+                    "telefono      = '" + datos[3] + "'," +
+                    "dui       = '" + datos[4] + "'" +
+                    "WHERE IdCliente = '" + datos[0] + "'";
+            }
+            else if (accion == "eliminar")
+            {
+                sql = "DELETE clientes FROM clientes WHERE IdCliente='" + datos[0] + "'";
+            }
+            procesarSQL(sql);
+        }
+        public void mantenimiento_datos_peliculas(String[] datos, String accion)
+        {
+            String sql = "";
+            if (accion == "nuevo")
+            {
+                sql = "INSERT INTO productos (IdAlquiler,descripcion,sinopsis,genero,duracion,costo) VALUES(" +
                     "'" + datos[1] + "'," +
                     "'" + datos[2] + "'," +
                     "'" + datos[3] + "'," +
@@ -64,68 +92,45 @@ namespace ClasedeProgramacion
             }
             else if (accion == "modificar")
             {
-                sql = "UPDATE clientes SET " +
-                    "codigo         = '" + datos[1] + "'," +
-                    "nombre         = '" + datos[2] + "'," +
-                    "direccion      = '" + datos[3] + "'," +
-                    "telefono       = '" + datos[4] + "'," +
-                    "dui            = '" + datos[5] + "'," +
-                    "nit            = '" + datos[6] + "'" +
-                    "WHERE idCliente = '" + datos[0] + "'";
+                sql = "UPDATE productos SET " +
+                    "IdAlquiler     = '" + datos[1] + "'," +
+                    "descripcion      = '" + datos[2] + "'," +
+                    "sinopsis          = '" + datos[3] + "'," +
+                    "genero          = '" + datos[4] + "'," +
+                    "duracion     = '" + datos[5] + "'," +
+                    "costo     = '" + datos[6] + "'" +
+                    "WHERE IdPelicula = '" + datos[0] + "'";
             }
             else if (accion == "eliminar")
             {
-                sql = "DELETE clientes FROM clientes WHERE idCliente='" + datos[0] + "'";
+                sql = "DELETE productos FROM peliculas WHERE IdPelicula='" + datos[0] + "'";
             }
             procesarSQL(sql);
         }
-        public void mantenimiento_datos_productos(String[] datos, String accion)
+        public void mantenimiento_datos_alquiler(String[] datos, String accion)
         {
             String sql = "";
             if (accion == "nuevo")
             {
-                sql = "INSERT INTO productos (idCategoria,codigo,nombre,marca,presentacion) VALUES(" +
+                sql = "INSERT INTO alquiler (IdCliente,IdPelicula,fecha_prestamo,fecha_devolucion) VALUES(" +
                     "'" + datos[1] + "'," +
                     "'" + datos[2] + "'," +
                     "'" + datos[3] + "'," +
-                    "'" + datos[4] + "'," +
-                    "'" + datos[5] + "'" +
+                    "'" + datos[4] + "'" +
                     ")";
             }
             else if (accion == "modificar")
             {
-                sql = "UPDATE productos SET " +
-                    "idCategoria      = '" + datos[1] + "'," +
-                    "codigo           = '" + datos[2] + "'," +
-                    "nombre           = '" + datos[3] + "'," +
-                    "marca            = '" + datos[4] + "'," +
-                    "presentacion     = '" + datos[5] + "'" +
-                    "WHERE idProducto = '" + datos[0] + "'";
+                sql = "UPDATE alquiler SET " +
+                    "IdCliente            = '" + datos[1] + "'," +
+                    "IdPelicula            = '" + datos[2] + "'," +
+                    "fecha_prestamo            = '" + datos[3] + "'" +
+                    "fecha_devolucion            = '" + datos[4] + "'" +
+                    "WHERE IdAlquiler = '" + datos[0] + "'";
             }
             else if (accion == "eliminar")
             {
-                sql = "DELETE productos FROM productos WHERE idProducto='" + datos[0] + "'";
-            }
-            procesarSQL(sql);
-        }
-        public void mantenimiento_datos_categorias(String[] datos, String accion)
-        {
-            String sql = "";
-            if (accion == "nuevo")
-            {
-                sql = "INSERT INTO categorias (categoria) VALUES(" +
-                    "'" + datos[1] + "'" +
-                    ")";
-            }
-            else if (accion == "modificar")
-            {
-                sql = "UPDATE categorias SET " +
-                    "categoria            = '" + datos[1] + "'" +
-                    "WHERE idCategoria = '" + datos[0] + "'";
-            }
-            else if (accion == "eliminar")
-            {
-                sql = "DELETE productos FROM categorias WHERE idCategoria='" + datos[0] + "'";
+                sql = "DELETE productos FROM alquiler WHERE IdAlquiler='" + datos[0] + "'";
             }
             procesarSQL(sql);
         }

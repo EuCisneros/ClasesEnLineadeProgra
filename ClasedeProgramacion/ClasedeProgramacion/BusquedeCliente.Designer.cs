@@ -28,19 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btncancelar = new System.Windows.Forms.Button();
             this.grdBusquedaClientes = new System.Windows.Forms.DataGridView();
-            this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dui = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.lblbuscar = new System.Windows.Forms.Label();
             this.btnseleccionar = new System.Windows.Forms.Button();
+            this.dataSet_sistema_peliculas = new ClasedeProgramacion.DataSet_sistema_peliculas();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientesTableAdapter = new ClasedeProgramacion.DataSet_sistema_peliculasTableAdapters.clientesTableAdapter();
+            this.idClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdBusquedaClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_sistema_peliculas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btncancelar
@@ -58,15 +62,15 @@
             // 
             this.grdBusquedaClientes.AllowUserToAddRows = false;
             this.grdBusquedaClientes.AllowUserToDeleteRows = false;
+            this.grdBusquedaClientes.AutoGenerateColumns = false;
             this.grdBusquedaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdBusquedaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCliente,
-            this.codigo,
-            this.nombre,
-            this.direccion,
-            this.telefono,
-            this.dui,
-            this.nit});
+            this.idClienteDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.direccionDataGridViewTextBoxColumn,
+            this.telefonoDataGridViewTextBoxColumn,
+            this.duiDataGridViewTextBoxColumn});
+            this.grdBusquedaClientes.DataSource = this.clientesBindingSource;
             this.grdBusquedaClientes.Location = new System.Drawing.Point(10, 49);
             this.grdBusquedaClientes.Margin = new System.Windows.Forms.Padding(1);
             this.grdBusquedaClientes.Name = "grdBusquedaClientes";
@@ -75,70 +79,6 @@
             this.grdBusquedaClientes.RowTemplate.Height = 40;
             this.grdBusquedaClientes.Size = new System.Drawing.Size(611, 346);
             this.grdBusquedaClientes.TabIndex = 14;
-            // 
-            // idCliente
-            // 
-            this.idCliente.DataPropertyName = "idCliente";
-            this.idCliente.HeaderText = "ID";
-            this.idCliente.MinimumWidth = 12;
-            this.idCliente.Name = "idCliente";
-            this.idCliente.ReadOnly = true;
-            this.idCliente.Visible = false;
-            this.idCliente.Width = 250;
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "codigo";
-            this.codigo.HeaderText = "CODIGO";
-            this.codigo.MinimumWidth = 12;
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Width = 250;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "NOMBRE";
-            this.nombre.MinimumWidth = 12;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 150;
-            // 
-            // direccion
-            // 
-            this.direccion.DataPropertyName = "direccion";
-            this.direccion.HeaderText = "DIRECCION";
-            this.direccion.MinimumWidth = 12;
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            this.direccion.Width = 150;
-            // 
-            // telefono
-            // 
-            this.telefono.DataPropertyName = "telefono";
-            this.telefono.HeaderText = "TEL";
-            this.telefono.MinimumWidth = 12;
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            this.telefono.Width = 250;
-            // 
-            // dui
-            // 
-            this.dui.DataPropertyName = "dui";
-            this.dui.HeaderText = "DUI";
-            this.dui.MinimumWidth = 12;
-            this.dui.Name = "dui";
-            this.dui.ReadOnly = true;
-            this.dui.Width = 250;
-            // 
-            // nit
-            // 
-            this.nit.DataPropertyName = "nit";
-            this.nit.HeaderText = "NIT";
-            this.nit.MinimumWidth = 12;
-            this.nit.Name = "nit";
-            this.nit.ReadOnly = true;
-            this.nit.Width = 150;
             // 
             // txtbuscar
             // 
@@ -171,6 +111,56 @@
             this.btnseleccionar.UseVisualStyleBackColor = true;
             this.btnseleccionar.Click += new System.EventHandler(this.btnseleccionar_Click);
             // 
+            // dataSet_sistema_peliculas
+            // 
+            this.dataSet_sistema_peliculas.DataSetName = "DataSet_sistema_peliculas";
+            this.dataSet_sistema_peliculas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clientesBindingSource
+            // 
+            this.clientesBindingSource.DataMember = "clientes";
+            this.clientesBindingSource.DataSource = this.dataSet_sistema_peliculas;
+            // 
+            // clientesTableAdapter
+            // 
+            this.clientesTableAdapter.ClearBeforeFill = true;
+            // 
+            // idClienteDataGridViewTextBoxColumn
+            // 
+            this.idClienteDataGridViewTextBoxColumn.DataPropertyName = "IdCliente";
+            this.idClienteDataGridViewTextBoxColumn.HeaderText = "IdCliente";
+            this.idClienteDataGridViewTextBoxColumn.Name = "idClienteDataGridViewTextBoxColumn";
+            this.idClienteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idClienteDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // duiDataGridViewTextBoxColumn
+            // 
+            this.duiDataGridViewTextBoxColumn.DataPropertyName = "dui";
+            this.duiDataGridViewTextBoxColumn.HeaderText = "DUI";
+            this.duiDataGridViewTextBoxColumn.Name = "duiDataGridViewTextBoxColumn";
+            this.duiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // BusquedeCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,9 +173,12 @@
             this.Controls.Add(this.lblbuscar);
             this.Controls.Add(this.btnseleccionar);
             this.Name = "BusquedeCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Busqueda de Cliente";
             this.Load += new System.EventHandler(this.BusquedeCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdBusquedaClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_sistema_peliculas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,15 +188,16 @@
 
         private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.DataGridView grdBusquedaClientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dui;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nit;
         private System.Windows.Forms.TextBox txtbuscar;
         private System.Windows.Forms.Label lblbuscar;
         private System.Windows.Forms.Button btnseleccionar;
+        private DataSet_sistema_peliculas dataSet_sistema_peliculas;
+        private System.Windows.Forms.BindingSource clientesBindingSource;
+        private DataSet_sistema_peliculasTableAdapters.clientesTableAdapter clientesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idClienteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn duiDataGridViewTextBoxColumn;
     }
 }

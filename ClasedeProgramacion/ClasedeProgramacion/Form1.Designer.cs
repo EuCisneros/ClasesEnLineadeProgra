@@ -41,8 +41,6 @@
             this.btnprimero = new System.Windows.Forms.Button();
             this.grbDatosClientes = new System.Windows.Forms.GroupBox();
             this.lblidCliente = new System.Windows.Forms.Label();
-            this.txtnit = new System.Windows.Forms.TextBox();
-            this.lblnit = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtdui = new System.Windows.Forms.TextBox();
@@ -53,8 +51,6 @@
             this.lbldireccion = new System.Windows.Forms.Label();
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.lblnombre = new System.Windows.Forms.Label();
-            this.txtcodigo = new System.Windows.Forms.TextBox();
-            this.lblcodigo = new System.Windows.Forms.Label();
             this.grbEdicion.SuspendLayout();
             this.grbNavegacion.SuspendLayout();
             this.grbDatosClientes.SuspendLayout();
@@ -217,8 +213,6 @@
             // grbDatosClientes
             // 
             this.grbDatosClientes.Controls.Add(this.lblidCliente);
-            this.grbDatosClientes.Controls.Add(this.txtnit);
-            this.grbDatosClientes.Controls.Add(this.lblnit);
             this.grbDatosClientes.Controls.Add(this.textBox6);
             this.grbDatosClientes.Controls.Add(this.label6);
             this.grbDatosClientes.Controls.Add(this.txtdui);
@@ -229,8 +223,6 @@
             this.grbDatosClientes.Controls.Add(this.lbldireccion);
             this.grbDatosClientes.Controls.Add(this.txtnombre);
             this.grbDatosClientes.Controls.Add(this.lblnombre);
-            this.grbDatosClientes.Controls.Add(this.txtcodigo);
-            this.grbDatosClientes.Controls.Add(this.lblcodigo);
             this.grbDatosClientes.Enabled = false;
             this.grbDatosClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbDatosClientes.ForeColor = System.Drawing.Color.White;
@@ -248,32 +240,12 @@
             this.lblidCliente.AutoSize = true;
             this.lblidCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblidCliente.ForeColor = System.Drawing.Color.White;
-            this.lblidCliente.Location = new System.Drawing.Point(167, 36);
+            this.lblidCliente.Location = new System.Drawing.Point(55, 29);
             this.lblidCliente.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblidCliente.Name = "lblidCliente";
             this.lblidCliente.Size = new System.Drawing.Size(24, 13);
             this.lblidCliente.TabIndex = 12;
             this.lblidCliente.Text = "ID:";
-            // 
-            // txtnit
-            // 
-            this.txtnit.Location = new System.Drawing.Point(82, 275);
-            this.txtnit.Margin = new System.Windows.Forms.Padding(1);
-            this.txtnit.Name = "txtnit";
-            this.txtnit.Size = new System.Drawing.Size(137, 20);
-            this.txtnit.TabIndex = 11;
-            // 
-            // lblnit
-            // 
-            this.lblnit.AutoSize = true;
-            this.lblnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnit.ForeColor = System.Drawing.Color.White;
-            this.lblnit.Location = new System.Drawing.Point(18, 277);
-            this.lblnit.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lblnit.Name = "lblnit";
-            this.lblnit.Size = new System.Drawing.Size(32, 13);
-            this.lblnit.TabIndex = 10;
-            this.lblnit.Text = "NIT:";
             // 
             // textBox6
             // 
@@ -306,7 +278,7 @@
             this.lbldui.AutoSize = true;
             this.lbldui.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldui.ForeColor = System.Drawing.Color.White;
-            this.lbldui.Location = new System.Drawing.Point(18, 239);
+            this.lbldui.Location = new System.Drawing.Point(19, 240);
             this.lbldui.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbldui.Name = "lbldui";
             this.lbldui.Size = new System.Drawing.Size(33, 13);
@@ -326,7 +298,7 @@
             this.lbltelefono.AutoSize = true;
             this.lbltelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltelefono.ForeColor = System.Drawing.Color.White;
-            this.lbltelefono.Location = new System.Drawing.Point(13, 205);
+            this.lbltelefono.Location = new System.Drawing.Point(18, 208);
             this.lbltelefono.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbltelefono.Name = "lbltelefono";
             this.lbltelefono.Size = new System.Drawing.Size(34, 13);
@@ -335,7 +307,7 @@
             // 
             // txtdireccion
             // 
-            this.txtdireccion.Location = new System.Drawing.Point(82, 89);
+            this.txtdireccion.Location = new System.Drawing.Point(82, 92);
             this.txtdireccion.Margin = new System.Windows.Forms.Padding(1);
             this.txtdireccion.Multiline = true;
             this.txtdireccion.Name = "txtdireccion";
@@ -347,7 +319,7 @@
             this.lbldireccion.AutoSize = true;
             this.lbldireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldireccion.ForeColor = System.Drawing.Color.White;
-            this.lbldireccion.Location = new System.Drawing.Point(13, 103);
+            this.lbldireccion.Location = new System.Drawing.Point(4, 95);
             this.lbldireccion.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbldireccion.Name = "lbldireccion";
             this.lbldireccion.Size = new System.Drawing.Size(79, 13);
@@ -374,26 +346,6 @@
             this.lblnombre.TabIndex = 2;
             this.lblnombre.Text = "NOMBRE:";
             // 
-            // txtcodigo
-            // 
-            this.txtcodigo.Location = new System.Drawing.Point(82, 35);
-            this.txtcodigo.Margin = new System.Windows.Forms.Padding(1);
-            this.txtcodigo.Name = "txtcodigo";
-            this.txtcodigo.Size = new System.Drawing.Size(76, 20);
-            this.txtcodigo.TabIndex = 1;
-            // 
-            // lblcodigo
-            // 
-            this.lblcodigo.AutoSize = true;
-            this.lblcodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcodigo.ForeColor = System.Drawing.Color.White;
-            this.lblcodigo.Location = new System.Drawing.Point(15, 35);
-            this.lblcodigo.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lblcodigo.Name = "lblcodigo";
-            this.lblcodigo.Size = new System.Drawing.Size(59, 13);
-            this.lblcodigo.TabIndex = 0;
-            this.lblcodigo.Text = "CODIGO:";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -404,6 +356,7 @@
             this.Controls.Add(this.grbNavegacion);
             this.Controls.Add(this.grbDatosClientes);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento de Clientes";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.grbEdicion.ResumeLayout(false);
@@ -430,8 +383,6 @@
         private System.Windows.Forms.Button btnprimero;
         private System.Windows.Forms.GroupBox grbDatosClientes;
         private System.Windows.Forms.Label lblidCliente;
-        private System.Windows.Forms.TextBox txtnit;
-        private System.Windows.Forms.Label lblnit;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtdui;
@@ -442,8 +393,6 @@
         private System.Windows.Forms.Label lbldireccion;
         private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.Label lblnombre;
-        private System.Windows.Forms.TextBox txtcodigo;
-        private System.Windows.Forms.Label lblcodigo;
     }
 }
 
